@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:qazonamozlar/config/routes/theme/main_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.light()),
+      theme: AppTheme.apptheme,
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
