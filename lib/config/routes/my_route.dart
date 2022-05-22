@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qazonamozlar/screens/onboarding/view/infoboarding/info_boarding.dart';
 import 'package:qazonamozlar/screens/onboarding/view/mainboarding/main_boarding.dart';
 
 class MyRoutes {
@@ -11,8 +12,8 @@ class MyRoutes {
     switch (settings.name) {
       case '/onBoard':
         return pageReturner(const OnBoardingView());
-      // case '/splash':
-      //   return pageReturner(const OnBoardView());  
+      case '/infoboard':
+        return pageReturner(const InfoBoarding());  
     }
   }
 

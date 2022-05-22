@@ -1,8 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qazonamozlar/config/changelang/chaange_lang.dart';
 import 'package:qazonamozlar/core/constants/colors/color_const.dart';
 import 'package:qazonamozlar/core/constants/icons/icon_const.dart';
 import 'package:qazonamozlar/core/constants/paddingmargin/pm_const.dart';
@@ -44,6 +42,7 @@ class LangView extends StatelessWidget {
                             children: [
                               InkWell(
                                 onTap: () {
+                                  ChangeLocale.changeLocalization(context, data.langcodes[__]);
                                   context
                                       .read<OnBoardCubit>()
                                       .changeLang(context);

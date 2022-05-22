@@ -4,6 +4,7 @@ import 'package:qazonamozlar/screens/onboarding/state/onboarding_state.dart';
 
 class OnBoardCubit extends Cubit<OnBoardingState> {
   List<String> languages = ['O’zbek tili', 'Русский язык', 'English'];
+  List<String> langcodes = ['uz','ru', 'en'];
 
   List pic = [
     'assets/images/uzb.png',
@@ -22,13 +23,13 @@ class OnBoardCubit extends Cubit<OnBoardingState> {
   }
 
   List splashPics = [
-    'assets/images/splash/splash1.png',
-    'assets/images/splash/splash2.png',
-    'assets/images/splash/splash3.png',
+    'assets/images/onboardinfo/on1.png',
+    'assets/images/onboardinfo/on2.png',
+    'assets/images/onboardinfo/on3.png',
   ];
 
   changeLang(BuildContext context) {
-    Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
+    Navigator.pushNamedAndRemoveUntil(context, '/infoboard', (route) => false);
   }
 
   OnBoardCubit() : super(SplashInitial()) {

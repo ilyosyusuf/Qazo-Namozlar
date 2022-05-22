@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:qazonamozlar/core/components/buttons/button_style.dart';
 
 class ButtonWidgets extends StatelessWidget {

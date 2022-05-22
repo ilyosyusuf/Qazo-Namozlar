@@ -38,6 +38,9 @@ dependencies:
   flutter_svg: ^1.0.3
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1
+  dots_indicator: ^2.1.0
+  dio: ^4.0.6
+  get_storage: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +68,9 @@ flutter:
   assets:
     - assets/lang/
     - assets/images/
+    - assets/images/onboardinfo/
     - assets/icons/
+    - assets/icons/auth/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

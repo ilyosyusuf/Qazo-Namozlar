@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:qazonamozlar/config/routes/my_route.dart';
 import 'package:qazonamozlar/config/theme/main_theme.dart';
+import 'package:qazonamozlar/screens/authentication/view/mainsign/main_sign.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,11 +11,11 @@ void main() async {
       child: MyApp(),
       supportedLocales: const [
         Locale('en', 'US'),
-        Locale('uz', 'UZ'),
         Locale('ru', 'RU'),
+        Locale('uz', 'UZ'),
       ],
       // saveLocale: true,
-      fallbackLocale: Locale('en', 'US'),
+      fallbackLocale: Locale('uz', 'UZ'),
       path: "assets/lang"));
 }
 
@@ -30,8 +31,9 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      initialRoute: '/onBoard',
-      onGenerateRoute: (s) => MyRoutes.instance.ongenerateRoute(s),
+      home: MainSign(),
+      // initialRoute: '/onBoard',
+      // onGenerateRoute: (s) => MyRoutes.instance.ongenerateRoute(s),
     );
   }
 }
