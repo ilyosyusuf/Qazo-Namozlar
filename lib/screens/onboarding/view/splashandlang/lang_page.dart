@@ -45,7 +45,7 @@ class LangView extends StatelessWidget {
                                   ChangeLocale.changeLocalization(context, data.langcodes[__]);
                                   context
                                       .read<OnBoardCubit>()
-                                      .changeLang(context);
+                                      .changeLang(context, __);
                                 },
                                 splashColor: ColorConst.kPrimaryColor,
                                 child: ListTile(

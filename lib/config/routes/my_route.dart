@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qazonamozlar/screens/authentication/view/mainsign/main_sign.dart';
 import 'package:qazonamozlar/screens/onboarding/view/infoboarding/info_boarding.dart';
 import 'package:qazonamozlar/screens/onboarding/view/mainboarding/main_boarding.dart';
 
@@ -13,7 +14,9 @@ class MyRoutes {
       case '/onBoard':
         return pageReturner(const OnBoardingView());
       case '/infoboard':
-        return pageReturner(const InfoBoarding());  
+        return pageReturner(const InfoBoarding()); 
+              case '/mainsign':
+        return pageReturner(const MainSign());   
     }
   }
 

@@ -40,100 +40,98 @@ class SignWidget extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Container(
-          child: Column(
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          appBarText.tr(),
-                          style: Theme.of(context).textTheme.headline6,
-                        ),
-                        SvgPicture.asset('assets/icons/auth/logo_icon.svg')
-                      ],
-                    ),
-                  )),
-              Expanded(
-                flex: 9,
+        child: Column(
+          children: [
+            Expanded(
+                flex: 1,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: context.h * 0.08),
-                        Text(emailText.tr()),
-                        TextFormField(
-                          controller: emailController,
-                          decoration: InputDecoration(
-                              prefixIcon: IconButton(
-                                icon: SvgPicture.asset(
-                                    'assets/icons/auth/phone.svg',
-                                    height: 20),
-                                onPressed: () {},
-                              ),
-                              hintText: emailHintText.tr(),
-                              enabledBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey))),
-                        ),
-                        SizedBox(height: context.h * 0.05),
-                        Text(passwordText.tr()),
-                        TextFormField(
-                          controller: passwordController,
-                          decoration: InputDecoration(
-                              prefixIcon: IconButton(
-                                icon: SvgPicture.asset(
-                                    'assets/icons/auth/lock.svg',
-                                    height: 20),
-                                onPressed: () {},
-                              ),
-                              suffixIcon: IconButton(
-                                icon: SvgPicture.asset(
-                                    'assets/icons/auth/eye.svg',
-                                    height: 20),
-                                onPressed: () {},
-                              ),
-                              hintText: passwordHintText.tr(),
-                              enabledBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey))),
-                        ),
-                        SizedBox(height: context.h * 0.08),
-                        ButtonWidgets(
-                             child: Text(
-                              "send".tr(),
-                              style: Theme.of(context).textTheme.headline5,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        appBarText.tr(),
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                      SvgPicture.asset('assets/icons/auth/logo_icon.svg')
+                    ],
+                  ),
+                )),
+            Expanded(
+              flex: 9,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: context.h * 0.08),
+                      Text(emailText.tr()),
+                      TextFormField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                            prefixIcon: IconButton(
+                              icon: SvgPicture.asset(
+                                  'assets/icons/auth/email.svg',
+                                  height: 20),
+                              onPressed: () {},
                             ),
-                            onPressed: send),
-                        const Spacer(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(existText.tr()),
-                            SizedBox(
-                              width: context.w * 0.015,
+                            hintText: emailHintText.tr(),
+                            enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.grey))),
+                      ),
+                      SizedBox(height: context.h * 0.05),
+                      Text(passwordText.tr()),
+                      TextFormField(
+                        controller: passwordController,
+                        decoration: InputDecoration(
+                            prefixIcon: IconButton(
+                              icon: SvgPicture.asset(
+                                  'assets/icons/auth/lock.svg',
+                                  height: 20),
+                              onPressed: () {},
                             ),
-                            InkWell(
-                              onTap: navigate,
-                              child: Text(
-                                enter.tr(),
-                                style:
-                                    const TextStyle(color: ColorConst.kPrimaryColor),
-                              ),
+                            suffixIcon: IconButton(
+                              icon: SvgPicture.asset(
+                                  'assets/icons/auth/eye.svg',
+                                  height: 20),
+                              onPressed: () {},
                             ),
-                          ],
-                        )
-                      ],
-                    ),
+                            hintText: passwordHintText.tr(),
+                            enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.grey))),
+                      ),
+                      SizedBox(height: context.h * 0.08),
+                      ButtonWidgets(
+                           child:  Text(
+                            "send".tr(),
+                            style: Theme.of(context).textTheme.headline5,
+                          ),
+                          onPressed: send),
+                      const Spacer(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(existText.tr()),
+                          SizedBox(
+                            width: context.w * 0.015,
+                          ),
+                          InkWell(
+                            onTap: navigate,
+                            child: Text(
+                              enter.tr(),
+                              style:
+                                  const TextStyle(color: ColorConst.kPrimaryColor),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

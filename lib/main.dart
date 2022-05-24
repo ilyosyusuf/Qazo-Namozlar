@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: MainSign(),
-      // initialRoute: '/onBoard',
-      // onGenerateRoute: (s) => MyRoutes.instance.ongenerateRoute(s),
+      // home: MainSign(),
+      initialRoute: '/onBoard',
+      onGenerateRoute: (s) => MyRoutes.instance.ongenerateRoute(s),
     );
   }
 }

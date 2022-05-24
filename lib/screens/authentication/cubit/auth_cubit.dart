@@ -15,7 +15,7 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthLoading());
 
       Response res = await Dio().post(
-        'http://192.168.214.2:1337/api/auth/local/register',
+        'http://192.168.27.2:1337/api/auth/local/register',
         data: {
           "username": "${DateTime.now()}",
           "email": email,
@@ -24,6 +24,9 @@ class AuthCubit extends Cubit<AuthState> {
       );
       if (res.statusCode == 200) {
         await GetStorageService.instance.box.write("token", res.data['jwt']);
+        await GetStorageService.instance.box.write("userID", res.data['user']["id"]);
+        print(GetStorageService.instance.box.read("userID"));
+        
         // Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
         print("royxatdan otdi");
 
@@ -47,7 +50,7 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthLoading());
 
       Response res =
-          await Dio().post('http://192.168.214.2:1337/api/auth/local', data: {
+          await Dio().post('http://192.168.27.2:1337/api/auth/local', data: {
         "identifier": email,
         "password": password,
       });

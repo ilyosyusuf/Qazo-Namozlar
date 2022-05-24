@@ -9,3 +9,7 @@ class SplashInitial extends OnBoardingState {
 class LangState extends OnBoardingState {
   LangState();
 }
+
+class SplashState extends OnBoardingState {
+  SplashState();
+}

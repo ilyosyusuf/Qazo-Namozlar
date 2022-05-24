@@ -25,13 +25,15 @@ class InfoBoarding extends StatelessWidget {
             'registrate'.tr(),
             style: Theme.of(context).textTheme.headline5,
           ),
-          onPressed: () {}),
+          onPressed: () {
+            Navigator.pushNamedAndRemoveUntil(context, '/mainsign', (route) => false);
+          }),
       body: BlocConsumer<OnBoardCubit, OnBoardingState>(
           builder: (context, state) {
             return Stack(children: [
               PageView(
                   onPageChanged: (value) {
-                    context.read<OnBoardCubit>().onChangeInfo();
+                    context.read<OnBoardCubit>().onChangeInfo(context,value);
                   },
                   children: const [
                     InfoWidget(),
